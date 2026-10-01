@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #001b3a;
+  --color-navy-2: #01316b;
+  --color-navy-3: #0b4488;
+  --color-accent: #14559c;
+  --color-green: #cbe60f;
+  --color-mist: #f6f8fb;
+  --color-paper: #f6f8fb;
+  --color-ink: #0a2540;
+  --color-muted: #5a6b83;
+  --color-on-dark: #eaf1fb;
+  --color-line: #d5dde6;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Manrope", "Segoe UI", system-ui, sans-serif;
+}
+
+:root {
+  --pad-x: clamp(22px, 5.2vw, 120px);
+  --pad-top: clamp(78px, 11vh, 124px);
+  --pad-bot: clamp(52px, 7.5vh, 84px);
+  --ease-out: cubic-bezier(0.19, 0.86, 0.31, 1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #001b3a;
+  color: #122033;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+.deck-root {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.deck-slide {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.h-slide-one {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  white-space: nowrap;
+  width: max-content;
+  max-width: none;
+  font-size: clamp(22px, 2.8vw, 48px);
+}
+
+::selection {
+  background: #cbe60f;
+  color: #001b3a;
+}
+
+:focus-visible {
+  outline: 2px solid #cbe60f;
+  outline-offset: 3px;
+}
+
+.stage-dark {
+  background:
+    radial-gradient(120% 90% at 22% 12%, #0a3d7c 0%, #001b3a 58%, #000e20 100%);
+}
+
+.stage-light {
+  background:
+    radial-gradient(58% 48% at 88% 4%, rgba(20, 85, 156, 0.08), transparent 64%),
+    #f6f8fb;
+}
+
+.card-dark {
+  border: 1px solid rgba(234, 241, 251, 0.12);
+  background: rgba(234, 241, 251, 0.05);
+  border-radius: 16px;
+}
+
+.card-light {
+  border: 1px solid rgba(0, 27, 58, 0.09);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -24px rgba(0, 27, 58, 0.45);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pill-dark {
+  border: 1px solid rgba(234, 241, 251, 0.16);
+  background: rgba(234, 241, 251, 0.06);
+  color: #d5deea;
+}
+
+.pill-light {
+  border: 1px solid rgba(0, 27, 58, 0.1);
+  background: #ffffff;
+  color: #3d4c5f;
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(234, 241, 251, 0.045) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(75% 70% at 50% 40%, #000 15%, transparent 78%);
+}
+
+.grain-light {
+  background-image: radial-gradient(rgba(0, 27, 58, 0.045) 1px, transparent 1px);
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: #cbe60f;
+  flex: none;
+}
+
+.h-slide {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  font-size: clamp(26px, 3.4vw, 64px);
+  text-wrap: balance;
+}
+
+.h-hero {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  font-size: clamp(44px, 6.2vw, 92px);
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 46ch;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.55;
+}
+
+.border-beam {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--beam-angle), transparent 62%, #cbe60f 78%, #e8f56a 86%, transparent 100%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-beam 3.2s linear infinite;
+}
+
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-beam {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(18px, 3vh, 36px);
+  z-index: 12;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: #d5deea;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-cue i {
+  display: block;
+  width: 1px;
+  height: 22px;
+  background: #cbe60f;
+  animation: bob 2.1s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+.num-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.82;
+  font-size: clamp(44px, 6.4vw, 108px);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --pad-x: 20px;
+    --pad-top: 72px;
+    --pad-bot: 64px;
+  }
+
+  .h-hero {
+    font-size: clamp(46px, 14vw, 72px);
+  }
+
+  .h-slide {
+    font-size: clamp(28px, 8.4vw, 42px);
+  }
+}
+
+@media (max-height: 760px) {
+  :root {
+    --pad-top: 70px;
+    --pad-bot: 48px;
+  }
+
+  .h-hero {
+    font-size: clamp(44px, 6vw, 84px);
+  }
+
+  .h-slide {
+    font-size: clamp(26px, 3vw, 48px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .border-beam,
+  .scroll-cue i {
+    animation: none;
+  }
+}
