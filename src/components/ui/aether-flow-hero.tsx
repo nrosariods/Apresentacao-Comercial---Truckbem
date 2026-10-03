@@ -86,6 +86,8 @@ export function AetherFlowHero({
       canvas.style.width = `${cssW}px`;
       canvas.style.height = `${cssH}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.fillStyle = THEME.bg;
+      ctx.fillRect(0, 0, cssW, cssH);
       initParticles();
     };
 
@@ -223,7 +225,7 @@ export function AetherFlowHero({
       ref={rootRef}
       className={`relative flex h-full min-h-0 w-full flex-col items-center justify-center overflow-hidden bg-navy text-white ${className}`.trim()}
     >
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-[#001b3a]" aria-hidden />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,27,58,0.08)_0%,rgba(0,27,58,0.5)_58%,#001229_100%)]" />
 
       <div className="relative z-10 flex flex-col items-center px-[var(--pad-x)] py-12 text-center">
@@ -234,7 +236,7 @@ export function AetherFlowHero({
           animate={show}
           src={asset(logoSrc)}
           alt="TruckBem Transportes"
-          className="mx-auto mb-[clamp(2.75rem,5.5vh,4.25rem)] h-[clamp(102px,16vh,192px)] w-auto max-w-[min(78vw,512px)] object-contain"
+          className="mx-auto mb-[clamp(2.75rem,5.5vh,4.25rem)] h-[clamp(102px,16vh,192px)] w-auto max-w-[min(78vw,512px)] bg-transparent object-contain"
         />
 
         <motion.h1

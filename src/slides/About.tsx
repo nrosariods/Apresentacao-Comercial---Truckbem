@@ -72,13 +72,13 @@ export function About({ active }: SlideProps) {
         >
           <video
             ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full bg-[#001b3a] object-cover"
             src={asset("media/hero.mp4")}
-            poster={asset("media/hero.jpg")}
             muted
             loop
             playsInline
-            preload="metadata"
+            autoPlay
+            preload="auto"
             aria-label="Operação TruckBem em vídeo"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/45 via-transparent to-navy/10" />
