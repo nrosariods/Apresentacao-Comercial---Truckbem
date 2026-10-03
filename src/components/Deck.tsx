@@ -156,6 +156,17 @@ export function Deck() {
 
   useEffect(() => {
     const onWheel = (event: WheelEvent) => {
+      if (window.matchMedia("(max-width: 1023px)").matches) {
+        const stage = (event.target as Element | null)?.closest?.("[data-stage]");
+        if (stage instanceof HTMLElement && stage.scrollHeight > stage.clientHeight + 4) {
+          const atTop = stage.scrollTop <= 0;
+          const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 2;
+          if ((event.deltaY > 0 && !atBottom) || (event.deltaY < 0 && !atTop)) {
+            return;
+          }
+        }
+      }
+
       event.preventDefault();
       if (lockedRef.current) return;
 
@@ -225,6 +236,17 @@ export function Deck() {
       const current = indexRef.current;
       const direction: 1 | -1 = delta > 0 ? 1 : -1;
 
+      if (window.matchMedia("(max-width: 1023px)").matches) {
+        const stage = (event.target as Element | null)?.closest?.("[data-stage]");
+        if (stage instanceof HTMLElement && stage.scrollHeight > stage.clientHeight + 4) {
+          const atTop = stage.scrollTop <= 8;
+          const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 8;
+          if ((direction > 0 && !atBottom) || (direction < 0 && !atTop)) {
+            return;
+          }
+        }
+      }
+
       if (hasInnerScroll(current)) {
         if (direction > 0) {
           if (progressRef.current < 0.995) {
@@ -285,7 +307,7 @@ export function Deck() {
               if (isActive) unlock();
             }}
           >
-            <div data-stage className="h-dvh overflow-hidden">
+            <div data-stage className="h-dvh overflow-hidden max-lg:overflow-y-auto max-lg:overflow-x-hidden">
               <Component active={isActive} deck progress={local} />
             </div>
           </motion.section>

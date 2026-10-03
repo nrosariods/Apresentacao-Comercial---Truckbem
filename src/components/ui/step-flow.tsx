@@ -40,9 +40,9 @@ export function AuroraHeading({
         <h2 className={`h-slide ${titleColor}`}>{title}</h2>
       </Reveal>
       {subtitle ? (
-        <Reveal active={active} i={2} className={`mt-3 ${subtitleNowrap ? "max-w-full overflow-x-auto" : "max-w-[52rem]"}`}>
+        <Reveal active={active} i={2} className={`mt-3 ${subtitleNowrap ? "max-w-full lg:overflow-x-auto" : "max-w-[52rem]"}`}>
           <p
-            className={`lede text-left font-sans ${sub} ${subtitleNowrap ? "whitespace-nowrap" : ""} ${subtitleClassName}`.trim()}
+            className={`lede text-left font-sans ${sub} ${subtitleNowrap ? "max-lg:whitespace-normal lg:whitespace-nowrap" : ""} ${subtitleClassName}`.trim()}
           >
             {subtitle}
           </p>
@@ -82,7 +82,7 @@ function StepCard({
         </span>
       </div>
       <article
-        className={`step-card flex min-h-[140px] flex-1 flex-col rounded-2xl border p-[clamp(0.85rem,2.4vh,1.6rem)_clamp(0.8rem,1.4vw,1.35rem)] transition-all duration-300 ${
+        className={`step-card flex min-h-0 flex-1 flex-col rounded-2xl border p-[clamp(0.85rem,2.4vh,1.6rem)_clamp(0.8rem,1.4vw,1.35rem)] transition-all duration-300 lg:min-h-[140px] ${
           dark
             ? "border-white/15 bg-white/[0.055] hover:border-green/45 hover:bg-white/10"
             : "border-navy/15 bg-white hover:border-green/50"
@@ -129,10 +129,10 @@ export function StepFlow({
     layout === "grid"
       ? "grid grid-cols-2 gap-3 md:grid-cols-4"
       : steps.length <= 4
-        ? "grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4"
+        ? "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
         : steps.length === 5
-          ? "grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-5"
-          : "grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6";
+          ? "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5"
+          : "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6";
 
   return (
     <ol className={`steps relative ${cols} ${className}`.trim()}>

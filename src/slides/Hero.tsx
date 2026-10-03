@@ -4,7 +4,7 @@ import type { SlideProps } from "./types";
 /** Slide de abertura — capa institucional. */
 export function Hero({ active }: SlideProps) {
   return (
-    <section className="relative h-full w-full overflow-hidden" aria-label="Abertura">
+    <section className="relative h-full w-full overflow-hidden max-lg:min-h-full" aria-label="Abertura">
       <AetherFlowHero
         active={active}
         title="Apresentação Comercial"

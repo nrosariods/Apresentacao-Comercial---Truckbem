@@ -27,7 +27,7 @@ export function Chrome({
         <div className="h-full bg-green" style={{ width: `${bar}%` }} />
       </div>
 
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center gap-4 px-[var(--pad-x)] pt-[clamp(14px,2vh,22px)]">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center gap-3 px-[var(--pad-x)] pt-[clamp(12px,2vh,22px)] lg:gap-4">
         <a
           href={CONTACT.site}
           target="_blank"
@@ -38,7 +38,7 @@ export function Chrome({
           <img
             src={asset(dark ? "brand/logo-white.svg" : "brand/logo-navy.svg")}
             alt="TruckBem Transportes"
-            className="h-[clamp(40px,5.2vh,64px)] w-auto"
+            className="h-[clamp(32px,8vw,40px)] w-auto lg:h-[clamp(40px,5.2vh,64px)]"
           />
         </a>
         <span className={`hidden h-8 w-px sm:block ${dark ? "bg-white/25" : "bg-navy/20"}`} aria-hidden />
@@ -51,7 +51,7 @@ export function Chrome({
         </p>
       </header>
 
-      <nav className="fixed top-1/2 right-[14px] z-40 flex -translate-y-1/2 flex-col gap-[7px]" aria-label="Slides">
+      <nav className="fixed top-1/2 right-[8px] z-40 flex -translate-y-1/2 flex-col gap-[7px] lg:right-[14px]" aria-label="Slides">
         {SLIDES.map((slide, i) => {
           const current = i === index;
           return (
@@ -74,8 +74,8 @@ export function Chrome({
         })}
       </nav>
 
-      <div className={`fixed right-[var(--pad-x)] bottom-[clamp(14px,2.2vh,22px)] z-40 flex items-center gap-3 ${ink}`}>
-        <p className="font-display text-[13px] font-bold tracking-[0.12em] tabular-nums" aria-live="polite">
+      <div className={`fixed right-[var(--pad-x)] bottom-[clamp(12px,2.2vh,22px)] z-40 flex items-center gap-2 lg:gap-3 ${ink}`}>
+        <p className="font-display text-[12px] font-bold tracking-[0.12em] tabular-nums lg:text-[13px]" aria-live="polite">
           <span className={count}>{pad(index + 1)}</span>
           <span className="opacity-45"> / {pad(total)}</span>
           <span className="sr-only">{SLIDES[index].label}</span>
@@ -85,7 +85,7 @@ export function Chrome({
           aria-label="Slide anterior"
           disabled={index === 0}
           onClick={() => onGo(index - 1)}
-          className={`grid h-9 w-9 place-items-center rounded-full border text-base disabled:opacity-30 ${dark ? "border-white/25" : "border-navy/20"}`}
+          className={`grid h-8 w-8 place-items-center rounded-full border text-base disabled:opacity-30 lg:h-9 lg:w-9 ${dark ? "border-white/25" : "border-navy/20"}`}
         >
           ↑
         </button>
@@ -94,7 +94,7 @@ export function Chrome({
           aria-label="Próximo slide"
           disabled={index === total - 1}
           onClick={() => onGo(index + 1)}
-          className={`grid h-9 w-9 place-items-center rounded-full border text-base disabled:opacity-30 ${dark ? "border-white/25" : "border-navy/20"}`}
+          className={`grid h-8 w-8 place-items-center rounded-full border text-base disabled:opacity-30 lg:h-9 lg:w-9 ${dark ? "border-white/25" : "border-navy/20"}`}
         >
           ↓
         </button>

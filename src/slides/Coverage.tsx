@@ -40,7 +40,7 @@ export function Coverage({ active }: SlideProps) {
             </ul>
           </Reveal>
         </div>
-        <div className="h-[min(64vh,700px)] min-h-0">
+        <div className="mx-auto h-[min(42vh,360px)] w-full min-h-0 max-w-[520px] lg:mx-0 lg:h-[min(64vh,700px)] lg:max-w-none">
           <BrazilMap active={active} scope="coverage" />
         </div>
       </div>

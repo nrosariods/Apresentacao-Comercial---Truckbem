@@ -276,19 +276,35 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1023px) {
   :root {
-    --pad-x: 20px;
-    --pad-top: 72px;
-    --pad-bot: 64px;
+    --pad-x: 18px;
+    --pad-top: 68px;
+    --pad-bot: 76px;
+  }
+
+  body {
+    touch-action: pan-y;
   }
 
   .h-hero {
-    font-size: clamp(46px, 14vw, 72px);
+    font-size: clamp(28px, 9vw, 48px);
   }
 
   .h-slide {
-    font-size: clamp(28px, 8.4vw, 42px);
+    font-size: clamp(22px, 6.6vw, 34px);
+  }
+
+  .lede {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .h-slide-one {
+    white-space: normal;
+    width: auto;
+    max-width: 100%;
+    font-size: clamp(20px, 6.4vw, 32px);
   }
 }
 

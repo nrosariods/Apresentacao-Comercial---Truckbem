@@ -39,7 +39,7 @@ export function Extended({ active }: SlideProps) {
         subtitleNowrap
       />
 
-      <div className="mt-6 flex min-h-0 flex-1 flex-col justify-center gap-8">
+      <div className="mt-5 flex min-h-0 flex-1 flex-col justify-center gap-6 lg:mt-6 lg:gap-8">
         <div>
           <Reveal active={active} i={3}>
             <p className="kicker text-on-dark">

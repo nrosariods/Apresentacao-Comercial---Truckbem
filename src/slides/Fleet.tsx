@@ -80,7 +80,7 @@ export function Fleet({ active }: SlideProps) {
       />
 
       {/* Métricas SP — 1º card com label em linha única */}
-      <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-[1.2fr_1fr_1fr] sm:gap-3">
+      <div className="mt-4 grid grid-cols-1 gap-2.5 md:grid-cols-3 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-3">
         {METRICS.map((metric, index) => (
           <Reveal key={metric.label} active={active} i={2 + index}>
             <article className="flex h-full min-h-[5.5rem] flex-col justify-center rounded-2xl border border-navy/10 bg-white/80 px-[clamp(0.85rem,1.3vw,1.15rem)] py-[clamp(0.8rem,1.6vh,1.05rem)] shadow-[0_14px_36px_-28px_rgba(1,49,107,0.32)] backdrop-blur-[10px]">
@@ -92,7 +92,7 @@ export function Fleet({ active }: SlideProps) {
               </p>
               <p
                 className={`mt-2 font-sans text-[clamp(0.7rem,0.82vw,0.86rem)] leading-snug text-muted ${
-                  metric.nowrap ? "whitespace-nowrap" : "max-w-[22ch]"
+                  metric.nowrap ? "max-lg:whitespace-normal lg:whitespace-nowrap" : "max-w-[22ch]"
                 }`}
               >
                 {metric.label}
@@ -107,7 +107,7 @@ export function Fleet({ active }: SlideProps) {
         {FEATURED.map((item, index) => (
           <motion.article
             key={item.name}
-            className={`group relative min-h-[120px] overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-[0_18px_40px_-28px_rgba(1,49,107,0.35)] ${item.span}`}
+            className={`group relative min-h-[96px] overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-[0_18px_40px_-28px_rgba(1,49,107,0.35)] lg:min-h-[120px] ${item.span}`}
             initial={reduce ? false : { opacity: 0, y: 14 }}
             animate={active ? { opacity: 1, y: 0 } : { opacity: 0 }}
             transition={{ duration: 0.4, delay: reduce ? 0 : 0.2 + index * 0.06, ease: EASE }}
@@ -137,7 +137,7 @@ export function Fleet({ active }: SlideProps) {
           <p className="mb-2.5 font-sans text-[10px] font-semibold tracking-[0.16em] text-muted uppercase">
             Frota completa · São Paulo
           </p>
-          <ul className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-8">
             {FLEET_ROSTER.map((item, index) => (
               <motion.li
                 key={item.name}

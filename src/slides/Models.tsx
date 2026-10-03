@@ -68,7 +68,7 @@ export function Models({ active }: SlideProps) {
                 onClick={() => setCurrent(index)}
                 onFocus={() => setCurrent(index)}
                 onMouseEnter={() => setCurrent(index)}
-                className={`relative flex h-full min-h-[148px] w-full flex-col overflow-hidden rounded-2xl border p-5 text-left transition-colors ${
+                className={`relative flex h-full min-h-[112px] w-full flex-col overflow-hidden rounded-2xl border p-4 text-left transition-colors lg:min-h-[148px] lg:p-5 ${
                   on
                     ? "border-green/40 bg-white/10"
                     : "border-white/15 bg-white/[0.055] hover:border-white/25"

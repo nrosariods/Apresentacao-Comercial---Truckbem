@@ -11,7 +11,7 @@ export function Close({ active }: SlideProps) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative h-full w-full overflow-hidden bg-navy text-white" aria-label="Encerramento">
+    <section className="relative h-full w-full overflow-hidden bg-navy text-white max-lg:min-h-full" aria-label="Encerramento">
       <div className="absolute inset-0 z-0">
         {active ? (
           <NeuralBackground
@@ -33,13 +33,13 @@ export function Close({ active }: SlideProps) {
           <img
             src={asset("brand/52-logo-truckbem-on-dark.svg")}
             alt="TruckBem Transportes"
-            className="mx-auto mb-8 h-[clamp(102px,16vh,192px)] w-auto max-w-[min(78vw,512px)] object-contain"
+            className="mx-auto mb-5 h-[clamp(72px,14vh,120px)] w-auto max-w-[min(72vw,512px)] object-contain lg:mb-8 lg:h-[clamp(102px,16vh,192px)]"
           />
         </Reveal>
-        <div className="mx-auto max-w-full overflow-x-auto text-center">
+        <div className="mx-auto max-w-full text-center lg:overflow-x-auto">
           <BlurTitle
             as="h2"
-            className="h-hero text-[clamp(28px,4.2vw,72px)] whitespace-nowrap"
+            className="h-hero text-[clamp(26px,7.4vw,48px)] max-lg:!whitespace-normal lg:text-[clamp(28px,4.2vw,72px)] lg:whitespace-nowrap"
             active={active}
             nowrap
             text="Vamos entender a sua operação?"

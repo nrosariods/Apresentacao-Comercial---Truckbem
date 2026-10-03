@@ -61,7 +61,7 @@ export function Differentials({ active, progress }: SlideProps) {
     <Stage tone="light" bleed>
       <div className="grid h-full min-h-0 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Esquerda: imagem do item ativo */}
-        <div className="relative min-h-[28vh] overflow-hidden bg-navy lg:min-h-0">
+        <div className="relative min-h-[20vh] overflow-hidden bg-navy max-lg:max-h-[28vh] lg:min-h-0 lg:max-h-none">
           <AnimatePresence mode="sync">
             <motion.img
               key={`${item.n}-${item.image}`}
@@ -110,7 +110,7 @@ export function Differentials({ active, progress }: SlideProps) {
                     </span>
                     <span className="inline-block min-w-0 max-w-full">
                       <span
-                        className={`block font-display text-[clamp(1.2rem,1.9vw,2rem)] leading-none font-extrabold tracking-[-0.02em] transition-transform duration-300 ${
+                        className={`block font-display text-[clamp(1.05rem,5vw,1.35rem)] leading-none font-extrabold tracking-[-0.02em] transition-transform duration-300 lg:text-[clamp(1.2rem,1.9vw,2rem)] ${
                           on ? "translate-x-1.5 text-navy" : "text-navy/35 group-hover:text-navy/70"
                         }`}
                       >

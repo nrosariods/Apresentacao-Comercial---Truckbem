@@ -29,7 +29,7 @@ export function About({ active }: SlideProps) {
 
   return (
     <Stage tone="light">
-      <div className="grid min-h-0 flex-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+      <div className="grid min-h-0 flex-1 items-center gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
         <div className="flex min-h-0 flex-col justify-center self-center pr-2">
           <Reveal active={active} i={0}>
             <p className="kicker text-muted">QUEM SOMOS</p>
@@ -68,7 +68,7 @@ export function About({ active }: SlideProps) {
         <Reveal
           active={active}
           i={2}
-          className="relative min-h-[260px] self-center overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-[0_22px_50px_-28px_rgba(1,49,107,0.35)] lg:min-h-[min(58vh,520px)] lg:max-h-[min(64vh,560px)]"
+          className="relative min-h-[200px] self-center overflow-hidden rounded-2xl border border-navy/10 bg-navy shadow-[0_22px_50px_-28px_rgba(1,49,107,0.35)] max-lg:aspect-[16/10] lg:min-h-[min(58vh,520px)] lg:max-h-[min(64vh,560px)]"
         >
           <video
             ref={videoRef}

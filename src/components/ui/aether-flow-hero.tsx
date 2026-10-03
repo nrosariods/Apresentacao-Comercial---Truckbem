@@ -242,7 +242,7 @@ export function AetherFlowHero({
           variants={fadeUpVariants}
           initial="hidden"
           animate={show}
-          className="font-display text-[clamp(2.35rem,5.6vw,5.1rem)] leading-[1.02] font-extrabold tracking-tighter text-white"
+          className="max-w-[14ch] font-display text-[clamp(1.85rem,8.4vw,3.2rem)] leading-[1.06] font-extrabold tracking-tighter text-white lg:max-w-none lg:text-[clamp(2.35rem,5.6vw,5.1rem)] lg:leading-[1.02]"
         >
           {title}
         </motion.h1>
@@ -252,7 +252,7 @@ export function AetherFlowHero({
           variants={fadeUpVariants}
           initial="hidden"
           animate={show}
-          className="mt-7 whitespace-nowrap font-display text-[clamp(1.2rem,2.5vw,2.25rem)] leading-none font-bold tracking-[-0.02em] text-green"
+          className="mt-5 max-w-[18ch] font-display text-[clamp(1.05rem,5.4vw,1.45rem)] leading-snug font-bold tracking-[-0.02em] text-green max-lg:px-1 lg:mt-7 lg:max-w-none lg:whitespace-nowrap lg:text-[clamp(1.2rem,2.5vw,2.25rem)] lg:leading-none"
         >
           {tagline}
         </motion.p>

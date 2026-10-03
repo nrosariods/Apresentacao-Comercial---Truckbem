@@ -23,7 +23,7 @@ export function Solutions({ active, progress }: SlideProps) {
   return (
     <Stage tone="light" bleed>
       <div className="grid h-full min-h-0 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="relative min-h-[28vh] overflow-hidden lg:min-h-0">
+        <div className="relative min-h-[22vh] overflow-hidden max-lg:max-h-[32vh] lg:min-h-0 lg:max-h-none">
           <AnimatePresence mode="sync">
             <motion.img
               key={item.image}
@@ -61,7 +61,7 @@ export function Solutions({ active, progress }: SlideProps) {
                   >
                     <span className="inline-block max-w-full">
                       <span
-                        className={`block font-display text-[clamp(1.45rem,2.3vw,2.35rem)] leading-none font-extrabold tracking-[-0.02em] transition-transform duration-300 ${
+                        className={`block font-display text-[clamp(1.2rem,5.6vw,1.55rem)] leading-none font-extrabold tracking-[-0.02em] transition-transform duration-300 lg:text-[clamp(1.45rem,2.3vw,2.35rem)] ${
                           on ? "translate-x-2 text-navy" : "text-navy/35 group-hover:text-navy/70"
                         }`}
                       >

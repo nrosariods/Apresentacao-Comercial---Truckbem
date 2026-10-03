@@ -35,7 +35,7 @@ export function Regional({ active }: SlideProps) {
         subtitleNowrap
       />
 
-      <div className="mt-5 grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:gap-5">
+      <div className="mt-4 grid min-h-0 flex-1 grid-cols-1 gap-3 lg:mt-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-5">
         {/* Esquerda — destaque estratégico */}
         <motion.article
           className={`${glass} flex min-h-0 flex-col p-[clamp(1.2rem,2.4vh,1.75rem)]`}
