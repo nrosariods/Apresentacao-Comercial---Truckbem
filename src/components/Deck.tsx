@@ -5,38 +5,28 @@ import { SLIDES } from "../data/slides";
 import { PANEL_SPRING } from "../lib/motion";
 import { prefersReducedMotion } from "../lib/gsap";
 import { About } from "../slides/About";
-import { AuroraCase } from "../slides/AuroraCase";
-import { Build } from "../slides/Build";
 import { Close } from "../slides/Close";
-import { Control } from "../slides/Control";
 import { Coverage } from "../slides/Coverage";
 import { Differentials } from "../slides/Differentials";
 import { Extended } from "../slides/Extended";
 import { Fleet } from "../slides/Fleet";
 import { Hero } from "../slides/Hero";
-import { LeadTimes } from "../slides/LeadTimes";
 import { Models } from "../slides/Models";
 import { Regional } from "../slides/Regional";
 import { Solutions } from "../slides/Solutions";
 import { Structure } from "../slides/Structure";
-import { Understand } from "../slides/Understand";
 import type { SlideProps } from "../slides/types";
 
 const COMPONENTS: ((props: SlideProps) => JSX.Element)[] = [
   Hero,
   About,
-  Understand,
-  Build,
   Solutions,
   Structure,
   Coverage,
   Fleet,
   Extended,
-  Control,
   Models,
   Regional,
-  LeadTimes,
-  AuroraCase,
   Differentials,
   Close,
 ];

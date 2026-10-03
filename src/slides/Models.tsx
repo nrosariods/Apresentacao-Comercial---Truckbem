@@ -2,12 +2,10 @@ import { useState } from "react";
 import {
   Building2,
   CheckCircle2,
-  MapPinned,
   PackageCheck,
   Route,
   Split,
   Truck,
-  Warehouse,
 } from "lucide-react";
 import { Stage } from "../components/Stage";
 import { AuroraHeading, StepFlow, type StepItem } from "../components/ui/step-flow";
@@ -34,25 +32,14 @@ const FLOWS: {
   },
   {
     n: "02",
-    title: "Parceiros regionais",
-    line: "Capilaridade local. Gestão TruckBem.",
+    title: "Distribuição dedicada",
+    line: "Recursos exclusivos alinhados a uma operação.",
     steps: [
-      { title: "Coleta", description: "Retirada sob a mesma coordenação.", icon: PackageCheck },
-      { title: "Transferência", description: "Movimentação até o CD parceiro.", icon: Truck },
-      { title: "CD parceiro", description: "Ponto regional homologado.", icon: Warehouse },
-      { title: "Distribuição regional", description: "Execução local acompanhada.", icon: MapPinned },
-      { title: "Entrega", description: "Confirmação e tratativa centralizadas.", icon: CheckCircle2 },
-    ],
-  },
-  {
-    n: "03",
-    title: "Grande São Paulo",
-    line: "Operação urbana no ritmo do volume.",
-    steps: [
-      { title: "Coleta", description: "Entrada da carga no dia.", icon: PackageCheck },
-      { title: "Escala", description: "Recursos alinhados ao volume.", icon: Building2 },
-      { title: "Distribuição urbana", description: "Capilaridade na Grande São Paulo.", icon: Route },
-      { title: "Entrega", description: "Acompanhamento até a confirmação.", icon: CheckCircle2 },
+      { title: "Coleta", description: "Retirada sob a demanda do cliente.", icon: PackageCheck },
+      { title: "Alocação", description: "Frota dedicada à operação.", icon: Building2 },
+      { title: "Roteirização", description: "Plano exclusivo da rota.", icon: Route },
+      { title: "Distribuição", description: "Execução com recurso dedicado.", icon: Truck },
+      { title: "Entrega", description: "Confirmação ao destinatário.", icon: CheckCircle2 },
     ],
   },
 ];
@@ -71,17 +58,17 @@ export function Models({ active }: SlideProps) {
         subtitleNowrap
       />
 
-      <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="mt-5 grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
         {FLOWS.map((item, index) => {
           const on = index === current;
           return (
-            <Reveal key={item.n} active={active} i={3 + index}>
+            <Reveal key={item.n} active={active} i={3 + index} className="h-full min-h-0">
               <button
                 type="button"
                 onClick={() => setCurrent(index)}
                 onFocus={() => setCurrent(index)}
                 onMouseEnter={() => setCurrent(index)}
-                className={`relative flex min-h-[140px] w-full flex-col overflow-hidden rounded-2xl border p-5 text-left transition-colors ${
+                className={`relative flex h-full min-h-[148px] w-full flex-col overflow-hidden rounded-2xl border p-5 text-left transition-colors ${
                   on
                     ? "border-green/40 bg-white/10"
                     : "border-white/15 bg-white/[0.055] hover:border-white/25"
@@ -93,7 +80,7 @@ export function Models({ active }: SlideProps) {
                 <span className="mt-auto font-display text-[clamp(0.95rem,1.2vw,1.2rem)] font-bold tracking-[-0.02em] text-white">
                   {item.title}
                 </span>
-                <span className="mt-2 font-sans text-xs leading-snug text-on-dark/70">{item.line}</span>
+                <span className="mt-2 min-h-[2.5rem] font-sans text-xs leading-snug text-on-dark/70">{item.line}</span>
                 <span className={`mt-3 block h-[3px] origin-left bg-green transition-transform ${on ? "scale-x-100" : "scale-x-0"}`} />
               </button>
             </Reveal>

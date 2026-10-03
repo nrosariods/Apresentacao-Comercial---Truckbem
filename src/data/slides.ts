@@ -1,21 +1,14 @@
-export const SLIDE_COUNT = 16;
-
 /** pin > 1 = slide com progresso interno (fica fixo até o fim). */
 export const SLIDES = [
   { id: "abertura", label: "Abertura", tone: "dark", pin: 1 },
   { id: "quem-somos", label: "Quem somos", tone: "light", pin: 1 },
-  { id: "entendimento", label: "Entendimento", tone: "dark", pin: 1 },
-  { id: "construcao", label: "Construção", tone: "dark", pin: 1 },
   { id: "solucoes", label: "Soluções", tone: "light", pin: 2.5 },
   { id: "estrutura", label: "Estrutura", tone: "dark", pin: 1 },
   { id: "malha", label: "Malha", tone: "dark", pin: 1 },
   { id: "frota", label: "Frota", tone: "light", pin: 1 },
   { id: "capacidade", label: "Capacidade", tone: "dark", pin: 1 },
-  { id: "gestao", label: "Gestão", tone: "light", pin: 1 },
   { id: "modelos", label: "Modelos", tone: "dark", pin: 1 },
   { id: "regioes", label: "Anápolis", tone: "dark", pin: 1 },
-  { id: "prazos", label: "Prazos", tone: "dark", pin: 1 },
-  { id: "aurora", label: "Aurora", tone: "dark", pin: 1 },
   { id: "diferenciais", label: "Diferenciais", tone: "light", pin: 2.8 },
   { id: "contato", label: "Contato", tone: "dark", pin: 1 },
 ] as const;

@@ -31,23 +31,10 @@ await jpeg(path.join(frota, "Fiorino_4.jpg"), "fiorino.jpg", 1000, 74);
 await jpeg(path.join(frota, "Van_3.jpg"), "van.jpg", 1000, 74);
 await jpeg(path.join(frota, "Tres_quarto_caminhao_2.jpg"), "tres-quartos.jpg", 1000, 74);
 await jpeg(path.join(gallery, "Galpao_1_galeria.jpeg"), "galpao.jpg", 1600, 72);
-await jpeg(path.join(gallery, "Galpao_3_galeria.jpeg"), "galpao-racks.jpg", 1400, 72);
 await jpeg(path.join(gallery, "Escritorio_4_galeria.png"), "escritorio.jpg", 1400, 74);
-await jpeg(path.join(gallery, "Galpao_2_galeria.jpeg"), "operacao.jpg", 1400, 72);
-
-const vuc = path.join(root, "Modelo VUC.jpeg");
-const meta = await sharp(vuc).metadata();
-const cropWidth = Math.min(850, meta.width ?? 850);
-await sharp(vuc)
-  .extract({ left: 0, top: 0, width: cropWidth, height: meta.height ?? 800 })
-  .resize({ width: 1100, withoutEnlargement: true })
-  .jpeg({ quality: 76, mozjpeg: true })
-  .toFile(path.join(out, "vuc.jpg"));
-console.log("vuc.jpg");
 
 await copyFile(path.join(aurora, "assets", "logo-white.svg"), path.join(brand, "logo-white.svg"));
 await copyFile(path.join(aurora, "assets", "logo-navy.svg"), path.join(brand, "logo-navy.svg"));
-await copyFile(path.join(aurora, "assets", "clients", "aurora.png"), path.join(out, "aurora.png"));
 await copyFile(path.join(site, "favicon.png"), path.join(root, "public", "favicon.png"));
 await copyFile(
   path.join(aurora, "assets", "br-states.json"),

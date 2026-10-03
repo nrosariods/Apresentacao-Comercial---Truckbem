@@ -8,9 +8,9 @@ import type { SlideProps } from "./types";
 
 const SOLUTIONS = [
   { title: "Transporte", line: "Origem e destino sob a mesma gestão.", image: "media/transporte.jpeg" },
-  { title: "Distribuição", line: "Urbana e regional, no ritmo da operação.", image: "media/operacao.jpg" },
+  { title: "Distribuição", line: "Urbana e regional, no ritmo da operação.", image: "media/distribuicao.jpeg" },
   { title: "Transporte dedicado", line: "Recursos alinhados a uma operação.", image: "media/transporte-dedicado.jpeg" },
-  { title: "Logística regional", line: "Malha com parceiros. Gestão TruckBem.", image: "media/galpao.jpg" },
+  { title: "Logística operacional", line: "Malha com parceiros. Gestão TruckBem.", image: "media/logistica_operacional.jpeg" },
   { title: "Operações sob medida", line: "O modelo nasce da necessidade do cliente.", image: "media/operacao-sob-medida.webp" },
 ];
 

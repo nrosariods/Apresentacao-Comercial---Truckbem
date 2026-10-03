@@ -30,7 +30,7 @@ export function Regional({ active }: SlideProps) {
       <AuroraHeading
         active={active}
         kicker="Praça operacional"
-        title="Anápolis — GO / Anju Express — Last Mile"
+        title="Goiás, São Paulo / Anju Express - Last Mile"
         subtitle="Base operacional para distribuição de encomendas no e-commerce."
         subtitleNowrap
       />

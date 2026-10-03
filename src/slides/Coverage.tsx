@@ -6,6 +6,7 @@ import type { SlideProps } from "./types";
 
 const STATES = [
   ["SP", "São Paulo", "Operação e gestão"],
+  ["GO", "Goiás", "Anápolis — last mile"],
   ["ES", "Espírito Santo", "Distribuição"],
   ["PR", "Paraná", "Parceiros regionais"],
   ["SC", "Santa Catarina", "Parceiros regionais"],

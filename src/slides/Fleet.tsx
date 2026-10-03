@@ -7,13 +7,13 @@ import type { SlideProps } from "./types";
 
 const METRICS = [
   {
-    value: "+30",
+    value: "+150",
     unit: "Veículos",
-    label: "Veículos em operação no estado de SP",
+    label: "Total em operação",
     nowrap: true,
   },
   {
-    value: "8",
+    value: "+10",
     unit: "Veículos",
     label: "Frota própria dedicada",
     nowrap: false,

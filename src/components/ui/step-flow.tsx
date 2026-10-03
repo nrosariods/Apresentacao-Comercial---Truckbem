@@ -70,7 +70,7 @@ function StepCard({
   const dark = tone === "dark";
 
   return (
-    <Reveal active={active} i={delay} className="step relative z-[1] flex min-w-0 flex-1 flex-col">
+    <Reveal active={active} i={delay} className="step relative z-[1] flex h-full min-w-0 flex-1 flex-col">
       <div className="step-top mb-[clamp(0.75rem,2vh,1.5rem)] flex justify-center">
         <span
           className={`step-num grid place-items-center rounded-full border-[1.6px] border-green/40 font-display text-[12.5px] font-extrabold text-green transition-transform duration-300 ${
@@ -82,7 +82,7 @@ function StepCard({
         </span>
       </div>
       <article
-        className={`step-card flex flex-1 flex-col rounded-2xl border p-[clamp(0.85rem,2.4vh,1.6rem)_clamp(0.8rem,1.4vw,1.35rem)] transition-all duration-300 ${
+        className={`step-card flex min-h-[140px] flex-1 flex-col rounded-2xl border p-[clamp(0.85rem,2.4vh,1.6rem)_clamp(0.8rem,1.4vw,1.35rem)] transition-all duration-300 ${
           dark
             ? "border-white/15 bg-white/[0.055] hover:border-green/45 hover:bg-white/10"
             : "border-navy/15 bg-white hover:border-green/50"
@@ -152,7 +152,7 @@ export function StepFlow({
       ) : null}
 
       {steps.map((step, index) => (
-        <li key={`${step.title}-${index}`} className="min-w-0">
+        <li key={`${step.title}-${index}`} className="flex h-full min-h-0 min-w-0 flex-col">
           <StepCard index={index} step={step} active={active} delay={startDelay + index} tone={tone} />
         </li>
       ))}
