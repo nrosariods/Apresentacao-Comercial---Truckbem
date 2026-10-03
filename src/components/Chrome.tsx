@@ -1,4 +1,4 @@
-import { SLIDES } from "../data/slides";
+import { CONTACT, SLIDES } from "../data/slides";
 import { asset } from "../lib/asset";
 
 function pad(n: number) {
@@ -28,11 +28,19 @@ export function Chrome({
       </div>
 
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center gap-4 px-[var(--pad-x)] pt-[clamp(14px,2vh,22px)]">
-        <img
-          src={asset(dark ? "brand/logo-white.svg" : "brand/logo-navy.svg")}
-          alt="TruckBem Transportes"
-          className="pointer-events-auto h-[clamp(40px,5.2vh,64px)] w-auto"
-        />
+        <a
+          href={CONTACT.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pointer-events-auto"
+          aria-label="Abrir o site oficial da TruckBem em uma nova aba"
+        >
+          <img
+            src={asset(dark ? "brand/logo-white.svg" : "brand/logo-navy.svg")}
+            alt="TruckBem Transportes"
+            className="h-[clamp(40px,5.2vh,64px)] w-auto"
+          />
+        </a>
         <span className={`hidden h-8 w-px sm:block ${dark ? "bg-white/25" : "bg-navy/20"}`} aria-hidden />
         <p
           className={`hidden font-sans text-[10.5px] font-semibold tracking-[0.2em] uppercase sm:block ${
