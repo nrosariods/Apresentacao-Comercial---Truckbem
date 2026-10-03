@@ -1,3 +1,4 @@
+/** Caminho absoluto a partir da raiz pública do Vite/Vercel. */
 export function asset(path: string) {
-  return `public/${path.replace(/^\//, "")}`;
+  return `/${path.replace(/^\/+/, "")}`;
 }

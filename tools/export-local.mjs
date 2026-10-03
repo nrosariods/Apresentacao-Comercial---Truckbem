@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -23,10 +23,6 @@ html = html.replace(
   () => `<script type="module">${js}</script>`,
 );
 
-html = html
-  .replaceAll("./media/", "./public/media/")
-  .replaceAll("./brand/", "./public/brand/")
-  .replaceAll("./favicon.png", "./public/favicon.png");
-
+copyFileSync(htmlPath, path.join(dist, "index.html"));
 writeFileSync(path.join(root, "index.html"), html);
 console.log("index.html pronto para abrir no navegador");

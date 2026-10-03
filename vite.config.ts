@@ -14,7 +14,6 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, _res, next) => {
           if (req.url === "/" || req.url === "/index.html") req.url = "/index.source.html";
-          if (req.url?.startsWith("/public/")) req.url = req.url.slice("/public".length);
           next();
         });
       },
