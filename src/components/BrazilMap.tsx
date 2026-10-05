@@ -10,14 +10,11 @@ type MapScope = "coverage" | "regional" | "lead";
 
 const data = mapData as MapFile;
 const SP_HUB = { x: 588.2, y: 658.2 };
-/** Anápolis — GO (oeste do DF no mapa vetorial). */
-const ANAPOLIS = { x: 542, y: 508 };
 
-const PRIMARY = new Set(["SP", "GO", "ES"]);
+const PRIMARY = new Set(["SP", "ES"]);
 const PARTNER = new Set(["PR", "SC", "RS"]);
 
 const LINKS = [
-  { id: "GO", x: ANAPOLIS.x, y: ANAPOLIS.y, scope: "coverage" as const },
   { id: "ES", x: 712, y: 568, scope: "coverage" as const },
   { id: "PR", x: 532.6, y: 701.7, scope: "both" as const },
   { id: "SC", x: 547.7, y: 752.5, scope: "both" as const },
@@ -98,7 +95,7 @@ export function BrazilMap({
   const label =
     scope === "lead"
       ? "Mapa do Brasil com as regiões atendidas destacadas"
-      : "Mapa do Brasil com conexão entre Sul e Sudeste — SP, GO, ES, PR, SC e RS";
+      : "Mapa do Brasil com conexão entre Sul e Sudeste — SP, ES, PR, SC e RS";
 
   return (
     <svg viewBox={data.viewBox} className="h-full w-full" role="img" aria-label={label}>
@@ -137,25 +134,23 @@ export function BrazilMap({
         </g>
       ))}
 
-      {links.map((link) =>
-        link.id === "GO" ? null : (
-          <g key={`${link.id}-dot`}>
-            <circle cx={link.x} cy={link.y} r="5" fill="#cbe60f" />
-            {!reduce && active && (
-              <motion.circle
-                cx={link.x}
-                cy={link.y}
-                fill="none"
-                stroke="#cbe60f"
-                strokeWidth="2"
-                initial={{ r: 5, opacity: 0.7 }}
-                animate={{ r: [5, 16], opacity: [0.55, 0] }}
-                transition={{ duration: 1.8, repeat: Infinity, delay: 0.4 }}
-              />
-            )}
-          </g>
-        ),
-      )}
+      {links.map((link) => (
+        <g key={`${link.id}-dot`}>
+          <circle cx={link.x} cy={link.y} r="5" fill="#cbe60f" />
+          {!reduce && active && (
+            <motion.circle
+              cx={link.x}
+              cy={link.y}
+              fill="none"
+              stroke="#cbe60f"
+              strokeWidth="2"
+              initial={{ r: 5, opacity: 0.7 }}
+              animate={{ r: [5, 16], opacity: [0.55, 0] }}
+              transition={{ duration: 1.8, repeat: Infinity, delay: 0.4 }}
+            />
+          )}
+        </g>
+      ))}
 
       {scope === "lead" ? (
         <>
@@ -183,9 +178,6 @@ export function BrazilMap({
       ) : (
         <>
           <HubMarker x={SP_HUB.x} y={SP_HUB.y} active={active} reduce={reduce} size="lg" />
-          {scope === "coverage" ? (
-            <HubMarker x={ANAPOLIS.x} y={ANAPOLIS.y} active={active} reduce={reduce} size="md" />
-          ) : null}
         </>
       )}
     </svg>
