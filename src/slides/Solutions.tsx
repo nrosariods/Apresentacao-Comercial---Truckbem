@@ -7,7 +7,7 @@ import { Stage } from "../components/Stage";
 import type { SlideProps } from "./types";
 
 const SOLUTIONS = [
-  { title: "Transporte", line: "Origem e destino sob a mesma gestão.", image: "media/transporte.jpeg" },
+  { title: "Transporte", line: "Origem e destino sob a mesma gestão.", image: "media/Transporte.jpeg" },
   { title: "Distribuição", line: "Urbana e regional, no ritmo da operação.", image: "media/distribuicao.jpeg" },
   { title: "Transporte dedicado", line: "Recursos alinhados a uma operação.", image: "media/transporte-dedicado.jpeg" },
   { title: "Logística operacional", line: "Malha com parceiros. Gestão TruckBem.", image: "media/logistica_operacional.jpeg" },

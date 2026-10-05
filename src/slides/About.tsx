@@ -49,17 +49,17 @@ export function About({ active }: SlideProps) {
             </p>
           </Reveal>
 
-          <ul className="mt-8 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-navy/10 pt-5 sm:grid-cols-4">
+          <ul className="mt-8 grid grid-cols-2 items-center gap-x-5 gap-y-3 border-t border-navy/10 pt-5 sm:grid-cols-4">
             {WORDS.map((word, index) => (
               <motion.li
                 key={word}
-                className="font-display text-[clamp(1.15rem,1.7vw,1.65rem)] leading-none font-extrabold tracking-[-0.02em] text-navy"
+                className="flex items-center gap-2 font-display text-[clamp(1.15rem,1.7vw,1.65rem)] leading-none font-extrabold tracking-[-0.02em] text-navy"
                 initial={reduce ? false : { opacity: 0, y: 12 }}
                 animate={active ? { opacity: 1, y: 0 } : undefined}
                 transition={{ duration: 0.45, delay: reduce ? 0 : 0.4 + index * 0.1, ease: EASE }}
               >
-                <span className="mr-2 inline-block h-[2px] w-3.5 bg-green align-middle" aria-hidden />
-                {word}
+                <span className="h-[2px] w-3.5 shrink-0 bg-green" aria-hidden />
+                <span className="leading-none">{word}</span>
               </motion.li>
             ))}
           </ul>
