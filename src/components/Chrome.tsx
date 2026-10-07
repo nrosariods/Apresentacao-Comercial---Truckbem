@@ -30,10 +30,8 @@ export function Chrome({
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center gap-3 px-[var(--pad-x)] pt-[clamp(12px,2vh,22px)] lg:gap-4">
         <a
           href={CONTACT.site}
-          target="_blank"
-          rel="noopener noreferrer"
           className="pointer-events-auto"
-          aria-label="Abrir o site oficial da TruckBem em uma nova aba"
+          aria-label="Abrir o site oficial da TruckBem"
         >
           <img
             src={asset(dark ? "brand/logo-white.svg" : "brand/logo-navy.svg")}
